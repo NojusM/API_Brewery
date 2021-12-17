@@ -80,6 +80,7 @@ namespace BreweryApp
                 labelph.Text = data.First().ph.ToString();
                 labeldate.Text = data.First().first_brewed;
                 
+                //Displays image
                 image_url = data.First().image_url;
                 string sURL = image_url;
                 WebRequest req = WebRequest.Create(sURL);
@@ -90,6 +91,8 @@ namespace BreweryApp
 
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox1.Image = img1;
+
+                //Adds  pages in status bar
                 pageStatus.Text = $"Page: 1/{data.Count()}";
 
             }
@@ -114,6 +117,7 @@ namespace BreweryApp
                 labelph.Text = data.ElementAt(i).ph.ToString();
                 labeldate.Text = data.ElementAt(i).first_brewed;
 
+                //Displays image
                 image_url = data.ElementAt(i).image_url;
                 string sURL = image_url;
                 WebRequest req = WebRequest.Create(sURL);
@@ -124,6 +128,8 @@ namespace BreweryApp
 
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox1.Image = img1;
+
+                //Navigates pages
                 nextIndex++;
                 pageStatus.Text = $"Page: {nextIndex.ToString()}/{ data.Count()}";
                 nextIndex--;
@@ -134,19 +140,11 @@ namespace BreweryApp
                 MessageBox.Show($"No more beers matching your search!", "Sorry...",
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Information);
+                //Corrects pages
                 if (prevOrNext < 0) nextIndex++;
                 else nextIndex--;
             }
         }
-
-        
-
-        private void statusStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -255,21 +253,6 @@ namespace BreweryApp
             }
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void beernamesearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void nextButton_Click(object sender, EventArgs e)   //Moves foward in beer data
         {
             //Used for knowing if next or prev button was used
@@ -340,13 +323,9 @@ namespace BreweryApp
             }
         }
 
-        private void shoppingList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buyButton_Click(object sender, EventArgs e)
         {
+            //Checks if cart is empty
             if(price != 0)
             {
                 var answer = MessageBox.Show($"Are you sure you want to buy for {price}$ ?", "Confirmation",

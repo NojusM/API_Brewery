@@ -32,7 +32,7 @@ namespace Brewery
             {
                 if (min_abv < 0 || max_abv < 0) return null;
                 //Appends a query to api request
-                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}", Method.GET);
+                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&per_page=80", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 //Deserializes data
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
@@ -42,7 +42,7 @@ namespace Brewery
                 if (abv < 0) return null;
                 min_abv = abv - 0.1F;
                 max_abv = abv + 0.1F;
-                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}", Method.GET);
+                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&per_page=80", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
             }
@@ -50,14 +50,14 @@ namespace Brewery
 
         public IEnumerable<Alcohol> GetAlcoholByDate(string brewed_before, string brewed_after)
         {
-            var request = new RestRequest($"?brewed_before={brewed_before}&brewed_after={brewed_after}", Method.GET);
+            var request = new RestRequest($"?brewed_before={brewed_before}&brewed_after={brewed_after}&per_page=80", Method.GET);
             IRestResponse response = p_client.Execute(request);
             return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
         }
 
         public IEnumerable<Alcohol> GetAlcoholByName(string name)
         {
-            var request = new RestRequest($"?beer_name={name}", Method.GET);
+            var request = new RestRequest($"?beer_name={name}&per_page=80", Method.GET);
             IRestResponse response = p_client.Execute(request);
             return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
         }
@@ -67,7 +67,7 @@ namespace Brewery
             if (abv == 0.0f)
             {
                 if (min_abv < 0 || max_abv < 0) return null;
-                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&beer_name={name}", Method.GET);
+                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&beer_name={name}&per_page=80", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
             }
@@ -76,7 +76,7 @@ namespace Brewery
                 if (abv < 0) return null;
                 min_abv = abv - 0.1F;
                 max_abv = abv + 0.1F;
-                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&beer_name={name}", Method.GET);
+                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&beer_name={name}&per_page=80", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
             }
@@ -87,7 +87,7 @@ namespace Brewery
             if (abv == 0.0f)
             {
                 if (min_abv < 0 || max_abv < 0) return null;
-                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}", Method.GET);
+                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}&per_page=80", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
             }
@@ -96,7 +96,7 @@ namespace Brewery
                 if (abv < 0) return null;
                 min_abv = abv - 0.1F;
                 max_abv = abv + 0.1F;
-                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}", Method.GET);
+                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}&per_page=80", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
             }
@@ -104,7 +104,7 @@ namespace Brewery
 
         public IEnumerable<Alcohol> GetAlcoholByDateAndName(string name, string brewed_before, string brewed_after)
         {
-            var request = new RestRequest($"?beer_name={name}&brewed_before={brewed_before}&brewed_after={brewed_after}", Method.GET);
+            var request = new RestRequest($"?beer_name={name}&brewed_before={brewed_before}&brewed_after={brewed_after}&per_page=80", Method.GET);
             IRestResponse response = p_client.Execute(request);
             return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
         }
@@ -113,7 +113,7 @@ namespace Brewery
             if (abv == 0.0f)
             {
                 if (min_abv < 0 || max_abv < 0) return null;
-                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}&beer_name={name}", Method.GET);
+                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}&beer_name={name}&per_page=80", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
             }
@@ -122,7 +122,7 @@ namespace Brewery
                 if (abv < 0) return null;
                 min_abv = abv - 0.1F;
                 max_abv = abv + 0.1F;
-                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}&beer_name={name}", Method.GET);
+                var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}&beer_name={name}&per_page=80", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
             }

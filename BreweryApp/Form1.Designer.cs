@@ -365,7 +365,6 @@ namespace BreweryApp
             this.beerdatesearch.Name = "beerdatesearch";
             this.beerdatesearch.Size = new System.Drawing.Size(524, 30);
             this.beerdatesearch.TabIndex = 8;
-            this.beerdatesearch.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // beerabvsearch
             // 
@@ -410,7 +409,6 @@ namespace BreweryApp
             this.beernamesearch.Name = "beernamesearch";
             this.beernamesearch.Size = new System.Drawing.Size(524, 30);
             this.beernamesearch.TabIndex = 4;
-            this.beernamesearch.TextChanged += new System.EventHandler(this.beernamesearch_TextChanged);
             // 
             // label2
             // 
@@ -464,7 +462,6 @@ namespace BreweryApp
             this.shoppingList.TabIndex = 7;
             this.shoppingList.UseCompatibleStateImageBehavior = false;
             this.shoppingList.View = System.Windows.Forms.View.Details;
-            this.shoppingList.SelectedIndexChanged += new System.EventHandler(this.shoppingList_SelectedIndexChanged);
             // 
             // nameHeader
             // 
@@ -549,7 +546,6 @@ namespace BreweryApp
             this.statusStrip1.Size = new System.Drawing.Size(1082, 24);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
-            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked_1);
             // 
             // pageStatus
             // 
