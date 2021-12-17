@@ -347,17 +347,26 @@ namespace BreweryApp
 
         private void buyButton_Click(object sender, EventArgs e)
         {
-            var answer = MessageBox.Show($"Are you sure you want to buy for {price}$ ?", "Confirmation",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if(answer == DialogResult.Yes)
+            if(price != 0)
             {
-                MessageBox.Show($"You paid {price}$ ! \n Thanks for buying! See you soon!", "Purchase successful!",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                var answer = MessageBox.Show($"Are you sure you want to buy for {price}$ ?", "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
-                Application.Exit();
+                if (answer == DialogResult.Yes)
+                {
+                    MessageBox.Show($"You paid {price}$ ! \n Thanks for buying! See you soon!", "Purchase successful!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                    Application.Exit();
+                }
+            }
+            else
+            {
+                var answer = MessageBox.Show($"You don't have anything in your cart!", "Oops...",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
         }
     }
