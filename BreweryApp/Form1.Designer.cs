@@ -295,7 +295,6 @@ namespace BreweryApp
             this.label8.TabIndex = 14;
             this.label8.Text = "First Brewed";
             this.label8.Visible = false;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -352,11 +351,10 @@ namespace BreweryApp
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pictureBox1.Location = new System.Drawing.Point(573, 235);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(404, 713);
+            this.pictureBox1.Size = new System.Drawing.Size(404, 719);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // beerdatesearch
             // 
@@ -390,7 +388,6 @@ namespace BreweryApp
             this.label4.Size = new System.Drawing.Size(284, 25);
             this.label4.TabIndex = 6;
             this.label4.Text = "Search by brew date range: \r\n";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -403,7 +400,6 @@ namespace BreweryApp
             this.label3.Size = new System.Drawing.Size(303, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Search by ABV or ABV range:";
-            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // beernamesearch
             // 
@@ -439,7 +435,7 @@ namespace BreweryApp
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1074, 821);
+            this.tabPage2.Size = new System.Drawing.Size(1074, 997);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Shopping bag";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -495,7 +491,6 @@ namespace BreweryApp
             this.priceLabel.Size = new System.Drawing.Size(74, 49);
             this.priceLabel.TabIndex = 6;
             this.priceLabel.Text = "0$";
-            this.priceLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // removeAllButton
             // 
@@ -543,16 +538,15 @@ namespace BreweryApp
             this.label1.Size = new System.Drawing.Size(156, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "Your total";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pageStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1031);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1029);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1082, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1082, 24);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked_1);

@@ -91,6 +91,7 @@ namespace BreweryApp
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox1.Image = img1;
                 pageStatus.Text = $"Page: 1/{data.Count()}";
+
             }
             catch (Exception)
             {
@@ -126,6 +127,7 @@ namespace BreweryApp
                 nextIndex++;
                 pageStatus.Text = $"Page: {nextIndex.ToString()}/{ data.Count()}";
                 nextIndex--;
+
             }
             catch (Exception)
             {
@@ -144,33 +146,7 @@ namespace BreweryApp
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void label3_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -178,6 +154,8 @@ namespace BreweryApp
             data = null;
             nextIndex = 0;
             BreweryAlcoholProvider provider = new BreweryAlcoholProvider();
+
+            
 
             //Declare variables
             string name = beernamesearch.Text;
@@ -202,7 +180,7 @@ namespace BreweryApp
                 {
                     if (ex is IndexOutOfRangeException)
                     {
-                        if(min_abv != 0.0) abv = min_abv;
+                        if(min_abv != 0.0F) abv = min_abv;
                         else abv = 0;
 
                         break;

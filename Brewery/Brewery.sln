@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreweryConsole", "..\Brewer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreweryApp", "..\BreweryApp\BreweryApp.csproj", "{F46C231D-278A-4CDD-B9E0-F34228A5F60F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoqUnitTest", "..\UnitTestProject1\MoqUnitTest.csproj", "{2D24631B-D366-468C-AA2D-EA54EA3D285F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F46C231D-278A-4CDD-B9E0-F34228A5F60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F46C231D-278A-4CDD-B9E0-F34228A5F60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F46C231D-278A-4CDD-B9E0-F34228A5F60F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D24631B-D366-468C-AA2D-EA54EA3D285F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D24631B-D366-468C-AA2D-EA54EA3D285F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D24631B-D366-468C-AA2D-EA54EA3D285F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D24631B-D366-468C-AA2D-EA54EA3D285F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

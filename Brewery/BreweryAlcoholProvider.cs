@@ -30,6 +30,7 @@ namespace Brewery
         {
             if(abv == 0.0f) //Checks if user uses a range (2.5|5) or a single value (5)
             {
+                if (min_abv < 0 || max_abv < 0) return null;
                 //Appends a query to api request
                 var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}", Method.GET);
                 IRestResponse response = p_client.Execute(request);
@@ -38,6 +39,7 @@ namespace Brewery
             }
             else
             {
+                if (abv < 0) return null;
                 min_abv = abv - 0.1F;
                 max_abv = abv + 0.1F;
                 var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}", Method.GET);
@@ -64,12 +66,14 @@ namespace Brewery
         {
             if (abv == 0.0f)
             {
+                if (min_abv < 0 || max_abv < 0) return null;
                 var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&beer_name={name}", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
             }
             else
             {
+                if (abv < 0) return null;
                 min_abv = abv - 0.1F;
                 max_abv = abv + 0.1F;
                 var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&beer_name={name}", Method.GET);
@@ -82,12 +86,14 @@ namespace Brewery
         {
             if (abv == 0.0f)
             {
+                if (min_abv < 0 || max_abv < 0) return null;
                 var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
             }
             else
             {
+                if (abv < 0) return null;
                 min_abv = abv - 0.1F;
                 max_abv = abv + 0.1F;
                 var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}", Method.GET);
@@ -106,12 +112,14 @@ namespace Brewery
         {
             if (abv == 0.0f)
             {
+                if (min_abv < 0 || max_abv < 0) return null;
                 var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}&beer_name={name}", Method.GET);
                 IRestResponse response = p_client.Execute(request);
                 return JsonConvert.DeserializeObject<IEnumerable<Alcohol>>(response.Content);
             }
             else
             {
+                if (abv < 0) return null;
                 min_abv = abv - 0.1F;
                 max_abv = abv + 0.1F;
                 var request = new RestRequest($"?abv_gt={min_abv}&abv_lt={max_abv}&brewed_before={brewed_before}&brewed_after={brewed_after}&beer_name={name}", Method.GET);
